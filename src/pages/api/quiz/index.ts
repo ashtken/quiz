@@ -15,7 +15,7 @@ export default async function handle(
 				`The HTTP ${req.method} method is not supported at this route.`
 			);
 		}
-	} catch (err) {
-		return res.status(403).json({ error: "Error!" });
+	} catch (error) {
+		console.error(error);
 	}
 }
