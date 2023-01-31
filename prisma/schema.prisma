@@ -14,6 +14,8 @@ model Quiz {
   id       String     @id @default(cuid())
   name     String
   question Question[]
+
+  @@map(name: "quiz")
 }
 
 model Question {
@@ -22,4 +24,6 @@ model Question {
   answer   Boolean
   quiz     Quiz    @relation(fields: [quizId], references: [id])
   quizId   String
+
+  @@map(name: "questions")
 }
